@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mini Paint</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <h1>Mini Paint</h1>
+  <div class="bar" role="toolbar" aria-label="Herramientas">
+    <div class="grp" id="tools"></div>
+    <div class="grp">
+      <input type="color" id="col" value="#000000" aria-label="Color">
+      <div class="pal" id="pal"></div>
+    </div>
+    <div class="grp">
+      <label>Grosor <input type="range" id="size" min="1" max="60" value="4"><span id="sv">4</span></label>
+      <label>Opacidad <input type="range" id="opa" min="5" max="100" value="100"></label>
+    </div>
+    <div class="grp">
+      <button id="fillT" title="Rellenar formas">Relleno</button>
+      <input type="text" id="txt" class="hide" placeholder="Escribe el texto" aria-label="Texto">
+      <select id="font" class="hide" aria-label="Tipografía">
+        <option value="sans-serif">Sans</option><option value="Georgia,serif">Serif</option><option value="'Courier New',monospace">Mono</option><option value="'Comic Sans MS',cursive">Manuscrita</option>
+      </select>
+    </div>
+    <div class="grp">
+      <button id="undo" title="Deshacer (Ctrl+Z)">↶ Deshacer</button>
+      <button id="redo" title="Rehacer (Ctrl+Y)">↷ Rehacer</button>
+      <button id="clear" title="Limpiar lienzo">Limpiar</button>
+      <button id="save" title="Guardar como PNG">Guardar PNG</button>
+    </div>
+  </div>
+  <div class="stage"><canvas id="cv" width="900" height="560" aria-label="Lienzo de dibujo"></canvas></div>
+  <div class="st"><span id="pos">x: 0, y: 0</span><span id="msg">Elige una herramienta y dibuja</span></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
